@@ -31,7 +31,7 @@ async function parseErrorResponse(resp) {
 async function requestJson(path, { method = "GET", headers = {}, body } = {}) {
   if (!API_BASE_URL) {
     throw new Error(
-      "Missing REACT_APP_API_BASE_URL. Set it in the frontend environment to point at the backend."
+      "Missing REACT_APP_API_BASE (preferred) or REACT_APP_API_BASE_URL. Set it in the frontend environment to point at the backend."
     );
   }
   const resp = await fetch(`${API_BASE_URL}${path}`, {
